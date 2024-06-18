@@ -23,6 +23,7 @@ namespace WordGameStarter
         private int priority = 0;
         public string Target { get; private set; }
         public int GuessCount { get; private set; }
+        Random r = new Random();
 
         public WordGame(int length)
         {
@@ -37,6 +38,7 @@ namespace WordGameStarter
         public WordGame(int length, int numWords) : this(length)
         {
             this.numWords = numWords;
+            this.wordLength = length;
             if (wordList == null)
                 LoadList();
             if (wordLengthDictionary.Count == 0)
@@ -57,7 +59,7 @@ namespace WordGameStarter
                     filteredWordList.Add(word.Key);
                 }
             }
-            Random r = new Random();
+           
             int index = r.Next(filteredWordList.Count);
             Target = filteredWordList[index];
         }
@@ -134,7 +136,8 @@ namespace WordGameStarter
             {
                 if (wordLengthDictionary.ContainsKey(word))
                 {
-                    break;
+                   
+
                 }
                 else { wordLengthDictionary.Add(word, word.Length); }
             }

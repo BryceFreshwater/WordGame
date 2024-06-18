@@ -22,6 +22,7 @@ namespace WordGameStarter
             int numWords;
             while (playAgain == true)
             {
+                wordGames.Clear();
                 Console.WriteLine("How many games would you like to play?");
                 numWords = Convert.ToInt16(Console.ReadLine());
                 Console.WriteLine("How many letters?");
