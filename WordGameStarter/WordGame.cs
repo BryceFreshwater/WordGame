@@ -34,7 +34,6 @@ namespace WordGameStarter
                 CreateDictionary();
         }
 
-        // You'll want this for an 'A'
         public WordGame(int length, int numWords) : this(length)
         {
             this.numWords = numWords;
